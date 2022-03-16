@@ -1,0 +1,85 @@
+<%- include('../include/header') %>
+
+<div class="container">
+    <%- include('../include/partials/spinner') %>
+
+    <%- include('../include/partials/responseMessage') %>
+
+    <div class="lobby hidden" id="lobby">
+        <div class="my-info">
+            <h4>My Info</h4>
+
+            <ul>
+                <li>
+                    <label>Username</label>
+                    <span id="username">testuser</span>
+                </li>
+
+                <li>
+                    <label>Rank</label>
+                    <span id="rank">beginner</span>
+                </li>
+
+                <li>
+                    <label>Points</label>
+                    <span id="points">1000</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rooms">
+            <h1>Rooms</h1>
+
+            <div class="room">
+                <div class="room-info">
+                    <span>Rank: <strong>Beginner</strong></span>
+                    <span id="beginner-rooms">20 rooms</span>
+                </div>
+
+                <a href="/games?rank=beginner">Play</a>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <span>Rank: <strong>Intermediate</strong></span>
+                    <span id="intermediate-rooms">20 rooms</span>
+                </div>
+
+                <a href="/games?rank=intermediate">Play</a>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <span>Rank: <strong>Advanced</strong></span>
+                    <span id="advanced-rooms">20 rooms</span>
+                </div>
+
+                <a href="/games?rank=advanced">Play</a>
+            </div>
+
+            <div class="room">
+                <div class="room-info">
+                    <span>Rank: <strong>Expert</strong></span>
+                    <span id="expert-rooms">20 rooms</span>
+                </div>
+
+                <a href="/games?rank=expert">Play</a>
+            </div>
+
+            <p class="total" id="total-users">Total Users: 100</p>
+
+            <p class="total" id="total-rooms">Total Rooms: 80</p>
+        </div>
+    </div>
+</div>
+
+<%- include('../include/partials/chat') %>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/spinner.js"></script>
+<script src="js/index.js"></script>
+<script src="js/lobby.js"></script>
+<script src="js/responseMessage.js"></script>
+<script src="js/chat.js"></script>
+
+<%- include('../include/footer') %>

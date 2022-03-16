@@ -1,0 +1,134 @@
+<%- include('../include/header') %>
+
+<div class="container">
+
+    <%- include('../include/partials/spinner') %>
+    
+    <div class="game-room hidden" id="game-room">
+        <div class="board-and-users">
+            <div class="user" id="player-light">
+                <span class="username"></span>
+                <span class="timer"></span>
+            </div>
+
+            <div class="chess-board">
+                <div class="box display-position-left" id="A-8"></div>
+                <div class="box" id="B-8"></div>
+                <div class="box" id="C-8"></div>
+                <div class="box" id="D-8"></div>
+                <div class="box" id="E-8"></div>
+                <div class="box" id="F-8"></div>
+                <div class="box" id="G-8"></div>
+                <div class="box" id="H-8"></div>
+                <div class="box display-position-left" id="A-7"></div>
+                <div class="box" id="B-7"></div>
+                <div class="box" id="C-7"></div>
+                <div class="box" id="D-7"></div>
+                <div class="box" id="E-7"></div>
+                <div class="box" id="F-7"></div>
+                <div class="box" id="G-7"></div>
+                <div class="box" id="H-7"></div>
+                <div class="box display-position-left" id="A-6"></div>
+                <div class="box" id="B-6"></div>
+                <div class="box" id="C-6"></div>
+                <div class="box" id="D-6"></div>
+                <div class="box" id="E-6"></div>
+                <div class="box" id="F-6"></div>
+                <div class="box" id="G-6"></div>
+                <div class="box" id="H-6"></div>
+                <div class="box display-position-left" id="A-5"></div>
+                <div class="box" id="B-5"></div>
+                <div class="box" id="C-5"></div>
+                <div class="box" id="D-5"></div>
+                <div class="box" id="E-5"></div>
+                <div class="box" id="F-5"></div>
+                <div class="box" id="G-5"></div>
+                <div class="box" id="H-5"></div>
+                <div class="box display-position-left" id="A-4"></div>
+                <div class="box" id="B-4"></div>
+                <div class="box" id="C-4"></div>
+                <div class="box" id="D-4"></div>
+                <div class="box" id="E-4"></div>
+                <div class="box" id="F-4"></div>
+                <div class="box" id="G-4"></div>
+                <div class="box" id="H-4"></div>
+                <div class="box display-position-left" id="A-3"></div>
+                <div class="box" id="B-3"></div>
+                <div class="box" id="C-3"></div>
+                <div class="box" id="D-3"></div>
+                <div class="box" id="E-3"></div>
+                <div class="box" id="F-3"></div>
+                <div class="box" id="G-3"></div>
+                <div class="box" id="H-3"></div>
+                <div class="box display-position-left" id="A-2"></div>
+                <div class="box" id="B-2"></div>
+                <div class="box" id="C-2"></div>
+                <div class="box" id="D-2"></div>
+                <div class="box" id="E-2"></div>
+                <div class="box" id="F-2"></div>
+                <div class="box" id="G-2"></div>
+                <div class="box" id="H-2"></div>
+                <div class="box display-position-left display-position-bottom" id="A-1"></div>
+                <div class="box display-position-bottom" id="B-1"></div>
+                <div class="box display-position-bottom" id="C-1"></div>
+                <div class="box display-position-bottom" id="D-1"></div>
+                <div class="box display-position-bottom" id="E-1"></div>
+                <div class="box display-position-bottom" id="F-1"></div>
+                <div class="box display-position-bottom" id="G-1"></div>
+                <div class="box display-position-bottom" id="H-1"></div>
+            </div>
+
+            <div class="user" id="player-black">
+                <span class="username"></span>
+                <span class="timer"></span>
+            </div>
+
+            <p class="waiting-message" id="waiting-message">Waiting for someone to connect...</p>
+        </div>
+
+        <div class="captured-pieces">
+            <div class="captured-container">
+                <h4>Pieces Captured:</h4>
+                <ul class="pieces" id="black-captured-pieces"></ul>
+            </div>
+
+            <div class="captured-container">
+                <h4>Pieces Captured:</h4>
+                <ul class="pieces" id="light-captured-pieces"></ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="fixed-element-container hidden" id="pieces-to-promote-container">
+    <ul class="pieces-to-promote" id="pieces-to-promote"></ul>
+</div>
+
+<div class="fixed-element-container hidden" id="game-over-message-container">
+    <div class="game-over-message" id="game-over-message">
+        <p><strong></strong> won!</p>
+
+        <div class="scores">
+            <div>My Score: <strong id="my-score">0</strong></div>
+            <div>Enemy Score: <strong id="enemy-score">0</strong></div>
+        </div>
+
+        <a href="/">Go Back To Lobby</a>
+    </div>
+</div>
+
+<%- include('../include/partials/chat') %>
+
+<%- include('../include/partials/toast') %>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/index.js"></script>
+<script src="js/spinner.js"></script>
+<script src="js/room/chessBoard.js"></script>
+<script src="js/room/Timer.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/room/index.js"></script>
+<script src="js/chat.js"></script>
+
+<%- include('../include/footer') %>

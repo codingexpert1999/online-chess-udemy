@@ -1,0 +1,32 @@
+<%- include('../include/header') %>
+
+<div class="container">
+    <%- include('../include/partials/spinner') %>
+
+    <div class="played-game">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Time</th>
+                        <th>Piece</th>
+                    </tr>
+                </thead>
+    
+                <tbody id="game-moves"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('../include/partials/chat') %>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../../js/spinner.js"></script>
+<script src="../../js/index.js"></script>
+<script src="../../js/playedGames.js"></script>
+<script src="../../js/chat.js"></script>
+
+<%- include('../include/footer') %>

@@ -1,0 +1,71 @@
+<%- include('../include/header') %>
+
+<div class="container">
+    <%- include('../include/partials/spinner') %>
+
+    <div class="profile hidden" id="profile">
+        <h1>My Profile</h1>
+
+        <div class="profile-details-container">
+            <form id="username-form">
+                <div class="input-group disabled">
+                    <label>Username</label>
+
+                    <div>
+                        <input type="text" id="username">
+                        <button type="button" id="change-username-btn">Change</button>
+                    </div>
+                </div>
+
+                <button class="hidden" type="submit" id="submit-username-change">Submit</button>
+            </form>
+
+            <form id="email-form">
+                <div class="input-group disabled">
+                    <label>Email</label>
+
+                    <div>
+                        <input type="email" id="email">
+                        <button type="button" id="change-email-btn">Change</button>
+                    </div>
+                </div>
+
+                <button class="hidden" type="submit" id="submit-email-change">Submit</button>
+            </form>
+
+            <button type="button" id="change-password-btn">Change Your Password</button>
+
+            <form class="hidden" id="password-form">
+                <div class="input-group">
+                    <label>Old Password</label>
+                    <input type="password" id="old-password" placeholder="Enter your old password...">
+                </div>
+
+                <div class="input-group">
+                    <label>New Password</label>
+                    <input type="password" id="new-password" placeholder="Enter a new password...">
+                </div>
+
+                <button type="submit" id="submit-password-change">Submit</button>
+                <button type="button" id="cancel-password-change" class="cancel">Cancel</button>
+            </form>
+
+            <button id="delete-account-btn">Delete Account</button>
+
+            <a href="/api/logout">Log Out</a>
+        </div>
+    </div>
+</div>
+
+<%- include('../include/partials/chat') %>
+
+<%- include('../include/partials/toast') %>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/spinner.js"></script>
+<script src="js/index.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/chat.js"></script>
+
+<%- include('../include/footer') %>

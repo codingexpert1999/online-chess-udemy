@@ -1,0 +1,93 @@
+<%- include('../include/header') %>
+
+<div class="container">
+    <%- include('../include/partials/spinner') %>
+
+    <%- include('../include/partials/responseMessage') %>
+
+    <div class="games hidden" id="games">
+        <div class="games-top">
+            <h1>Games</h1>
+
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="expert">Expert</option>
+            </select>
+        </div>
+
+        <p class="hidden" id="no-games-message">No Games Found</p>
+
+        <ul class="games-list hidden" id="games-list"></ul>
+
+        <div class="games-bottom">
+            <button id="create-room">Create Room</button>
+
+            <button id="join-random">Join Random</button>
+        </div>
+    </div>
+</div>
+
+<div class="fixed-element-container form-container hidden" id="create-room-form-container">
+    <form id="create-room-form">
+        <div class="input-group">
+            <label>Room ID</label>
+            <input type="text" placeholder="Enter a room ID..." id="room-id" required>
+        </div>
+
+        <div class="input-group">
+            <label>Game Time</label>
+            <select id="game-time">
+                <option value="0">No Time</option>
+                <option value="1">15 Minutes</option>
+                <option value="2">30 Minutes</option>
+                <option value="3">45 Minutes</option>
+                <option value="4">60 Minutes</option>
+            </select>
+        </div>
+
+        <div class="input-group input-group-checkbox">
+            <label>Add Password</label>
+            <input type="checkbox" id="add-password">
+        </div>
+
+        <div class="input-group disabled" id="password-input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter a password..." id="room-password" required>
+        </div>
+
+        <button type="submit">Create</button>
+
+        <span class="close-form" id="close-create-form">
+            &#x2715;
+        </span>
+    </form>
+</div>
+
+<div class="fixed-element-container form-container hidden" id="join-room-form-container">
+    <form id="join-room-form">
+        <div class="input-group">
+            <label>Room Password</label>
+            <input type="password" placeholder="Enter the room password..." id="room-password-join" required>
+        </div>
+
+        <button type="submit">Join</button>
+
+        <span class="close-form" id="close-join-form">
+            &#x2715;
+        </span>
+    </form>
+</div>
+
+<%- include('../include/partials/chat') %>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/spinner.js"></script>
+<script src="js/index.js"></script>
+<script src="js/games.js"></script>
+<script src="js/responseMessage.js"></script>
+<script src="js/chat.js"></script>
+
+<%- include('../include/footer') %>
