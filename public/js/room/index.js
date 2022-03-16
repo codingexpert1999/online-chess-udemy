@@ -745,7 +745,7 @@ const endGame = (winner=null) => {
             myScoreElement.innerText = winningPoints
             enemyScoreElement.innerText = -winningPoints
             myScoreElement.classList.add("positive-score")
-            socket.emit("update-scores", roomId, winningPoints, -winningPoints)
+            socket.emit("update-score", roomId, winningPoints, -winningPoints)
         }else{
             winningPoints = ~~((enemyScore / totalPiecesPoints) * 100)
             myScoreElement.innerText = -winningPoints
