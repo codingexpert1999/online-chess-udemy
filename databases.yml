@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: online_chess_udemy
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - mysqldata:/var/lib/mysql
+    container_name: mysql
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redisdata:/data
+    container_name: redis
+
+volumes:
+  mysqldata:
+  redisdata:
