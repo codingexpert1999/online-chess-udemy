@@ -84,7 +84,11 @@ BEGIN
 		SET user_rank_2 := "expert";
 	END IF;
     
-    UPDATE user_info SET user_points=points_1, user_rank=user_rank_1 WHERE id=userId_1;
-    UPDATE user_info SET user_points=points_2, user_rank=user_rank_2 WHERE id=userId_2;
+    UPDATE user_info SET user_points=points_1, user_rank=user_rank_1 WHERE user_id=userId_1;
+    UPDATE user_info SET user_points=points_2, user_rank=user_rank_2 WHERE user_id=userId_2;
 END $$
 DELIMITER ;
+
+SELECT * FROM users;
+SELECT * FROM user_info;
+SELECT * FROM games;

@@ -154,7 +154,7 @@ exports.getInfo = (req, res) => {
                 username,
                 email,
                 user_rank: req.cookies.user_rank,
-                user_points: req.cookies.user_points
+                user_points: parseInt(req.cookies.user_points)
             }
 
             return res.json(user);

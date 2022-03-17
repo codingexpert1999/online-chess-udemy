@@ -247,6 +247,7 @@ const endMyTurn = (newPieceBox, pawnPromoted = false, castlingPerformed = false,
 // Move Logic
 
 const move = (e) => {
+    socket.emit("update-score", roomId, 10, -10)
     let currentBox = document.getElementById(selectedPiece.position);
     let boxToMove = e.target.parentNode;
     let piece = currentBox.querySelector(".piece");

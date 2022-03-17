@@ -1,6 +1,5 @@
 FROM node
 
-# Setting working directory
 WORKDIR /app
 
 COPY package.json .
